@@ -59,6 +59,7 @@ public class ControllerPlay {
     @RequestMapping(value = "/test" , method = RequestMethod.POST)
     public ApiResult test(){
         System.out.println("1");
+        System.out.println("2");
         return ApiResult.build().success();
     }
 
