@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tioad.videodemo.dao.CategoryMapper">
+    <resultMap id="categoryMap" type="com.tioad.videodemo.entity.Category">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="deleted" jdbcType="TINYINT" property="deleted" />
+    </resultMap>
+
+
+    <select id="insertCategory" parameterType="com.tioad.videodemo.entity.Category">
+        insert into play_category (`name` , add_time , update_time) values (#{name} , #{addTime} , #{updateTime})
+    </select>
+
+    <select id="selectCategoryByName" parameterType="java.lang.String" resultType="Category">
+        select * from play_category where `name` = #{name}
+    </select>
+
+    <select id="getCategoryList" resultType="Category">
+        select * from play_category
+            where deleted = 0
+    </select>
+</mapper>

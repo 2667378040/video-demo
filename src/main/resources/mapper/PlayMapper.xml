@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tioad.videodemo.dao.PlayMapper">
+
+    <select id="insertPlay" parameterType="com.tioad.videodemo.entity.Play">
+        insert into play_result (`name` , camera_number , theme , environment , `time` , scene , scenery , people , role , camera_position , camera_movement , camera_position_direction , collect_music , music , visual_effect) values (#{name} , #{cameraNumber} , #{theme} , #{environment} , #{time} , #{scene} , #{scenery} , #{people} , #{role} , #{cameraPosition} , #{cameraMovement} , #{cameraPositionDirection} , #{collectMusic} , #{music} , #{visualEffect})
+    </select>
+
+</mapper>
